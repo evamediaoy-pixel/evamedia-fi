@@ -44,3 +44,32 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 document.addEventListener('click',e=>{
   if(hdr.classList.contains('menu-open') && !hdr.contains(e.target)) closeMenu();
 });
+
+
+async function refreshPinnedInstagram(){
+  const holder=document.getElementById('instagramPinned');
+  if(!holder) return;
+  try{
+    const res=await fetch('/api/instagram-pinned',{headers:{'accept':'application/json'}});
+    if(!res.ok) return;
+    const data=await res.json();
+    if(!data || !Array.isArray(data.items) || !data.items.length) return;
+
+    holder.innerHTML='';
+    data.items.slice(0,3).forEach((item)=>{
+      const a=document.createElement('a');
+      a.className='instagram-card'+(item.thumbnail?' has-thumb':'');
+      a.href=item.permalink;
+      a.target='_blank';
+      a.rel='noopener';
+      if(item.thumbnail){
+        a.style.backgroundImage=`linear-gradient(to top,rgba(3,9,14,.82),rgba(3,9,14,.08) 68%),url("${item.thumbnail}")`;
+      }
+      a.innerHTML='<span class="instagram-badge">PINNED</span><span class="instagram-card-icon">◎</span><span class="instagram-card-label">Instagram '+(item.type||'Post')+'</span>';
+      holder.appendChild(a);
+    });
+  }catch(e){
+    // Static fallback cards remain visible if Instagram blocks the automatic check.
+  }
+}
+refreshPinnedInstagram();
