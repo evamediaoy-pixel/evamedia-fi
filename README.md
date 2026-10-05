@@ -1,12 +1,6 @@
 # Eva Media Oy
 
-Staattinen, nopea ja responsiivinen yrityssivusto.
+Mobil GitHub yüklemesi için düz sürüm.
 
-## Rakenne
-- `index.html` – sisältö ja semanttinen rakenne
-- `assets/site.css` – ulkoasu ja animaatiot
-- `assets/site.js` – kevyt käyttöliittymälogiikka
-- `images/` – optimoidut WebP-kuvat
-- `robots.txt` / `sitemap.xml` – hakukoneita varten
-
-Deploy: Vercel, main branch.
+Bu klasördeki tüm dosyaları repo kök dizinine birlikte yükleyebilirsin.
+Vercel `main` branch'ten otomatik yayınlar.
