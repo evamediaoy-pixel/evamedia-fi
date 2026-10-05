@@ -63,13 +63,11 @@ async function refreshPinnedInstagram(){
       a.target='_blank';
       a.rel='noopener';
       if(item.thumbnail){
-        a.style.backgroundImage=`linear-gradient(to top,rgba(3,9,14,.82),rgba(3,9,14,.08) 68%),url("${item.thumbnail}")`;
+        a.style.backgroundImage=`url("${item.thumbnail}")`;
       }
-      a.innerHTML='<span class="instagram-badge">PINNED</span><span class="instagram-card-icon">◎</span><span class="instagram-card-label">Instagram '+(item.type||'Post')+'</span>';
+      a.innerHTML='<span class="instagram-badge">PINNED</span><span class="instagram-card-label">'+(item.type||'Instagram')+'</span>';
       holder.appendChild(a);
     });
-  }catch(e){
-    // Static fallback cards remain visible if Instagram blocks the automatic check.
-  }
+  }catch(e){}
 }
 refreshPinnedInstagram();
