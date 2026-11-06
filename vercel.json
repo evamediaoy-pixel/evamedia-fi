@@ -12,15 +12,38 @@
   ],
   "routes": [
     {
+      "src": "/(.*)",
+      "headers": {
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      },
+      "continue": true
+    },
+    {
       "src": "/api/instagram-pinned",
       "dest": "/api-instagram-pinned.js"
+    },
+    {
+      "src": "/tietosuoja/?",
+      "dest": "/tietosuoja.html"
+    },
+    {
+      "src": "/llms.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8"
+      },
+      "continue": true
     },
     {
       "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "status": 404,
+      "dest": "/404.html"
     }
   ]
 }
