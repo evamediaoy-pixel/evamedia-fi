@@ -103,7 +103,10 @@ if(chat){
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(!panel.hidden){setOpen(false);fab.focus();}closeMenu();}});
   /* Teaser bubble after a moment, once per session */
   if(store.get('wa_teaser')!=='0'&&!store.get('wa_seen')){
-    setTimeout(function(){if(panel.hidden){teaser.hidden=false;store.set('wa_teaser','0');}},7000);
+    var ready=false,shown=false;
+    function maybeShow(){if(shown||!ready||!panel.hidden)return;if(innerWidth<=960&&scrollY<innerHeight*.8)return;shown=true;teaser.hidden=false;store.set('wa_teaser','0');}
+    setTimeout(function(){ready=true;maybeShow();},6000);
+    addEventListener('scroll',maybeShow,{passive:true});
   }
 }
 
