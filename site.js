@@ -110,23 +110,9 @@ if(chat){
   }
 }
 
-/* Instagram pinned posts */
-(function refreshPinnedInstagram(){
-  var holder=document.getElementById('instagramPinned');
-  if(!holder||!window.fetch)return;
-  fetch('/api/instagram-pinned',{headers:{accept:'application/json'}}).then(function(r){return r.ok?r.json():null}).then(function(data){
-    if(!data||!Array.isArray(data.items)||!data.items.length)return;
-    holder.innerHTML='';
-    data.items.slice(0,3).forEach(function(item){
-      if(!item||!/^https:\/\/(www\.)?instagram\.com\//.test(item.permalink||''))return;
-      var a=document.createElement('a');
-      a.className='instagram-card'+(item.thumbnail?' has-thumb':'');
-      a.href=item.permalink;a.target='_blank';a.rel='noopener';
-      if(item.thumbnail&&/^https:\/\//.test(item.thumbnail))a.style.backgroundImage='url("'+item.thumbnail.replace(/"/g,'%22')+'")';
-      var b=document.createElement('span');b.className='instagram-badge';b.textContent=(item.type||'POST').toString().toUpperCase().slice(0,12);
-      var l=document.createElement('span');l.className='instagram-card-label';l.textContent='Katso Instagramissa';
-      a.appendChild(b);a.appendChild(l);holder.appendChild(a);
-    });
-  }).catch(function(){});
-})();
+/* Work strip scroll buttons */
+var strip=document.getElementById('strip');
+document.querySelectorAll('.sbtn').forEach(function(b){
+  b.addEventListener('click',function(){if(!strip)return;var f=strip.querySelector('figure');var w=f?f.getBoundingClientRect().width+16:320;strip.scrollBy({left:w*Number(b.getAttribute('data-dir')),behavior:'smooth'});});
+});
 })();
