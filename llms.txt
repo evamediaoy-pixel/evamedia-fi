@@ -12,8 +12,12 @@ Eva Media Oy is a signage and vehicle-wrap company in Mäntsälä, Finland (Uusi
 - Tarjouspyyntö: lähetä kuva, mitat tai idea WhatsAppilla tai sähköpostilla.
 
 ## Sivut / Pages
-- [Etusivu: palvelut, työt, prosessi, yhteystiedot](https://evamedia.fi/)
+- [Etusivu: palvelut, työt, oma tuotanto, EVA Studio, prosessi, tarjouspyyntö, palvelualue, UKK, yhteystiedot](https://evamedia.fi/)
 - [Tietosuojaseloste](https://evamedia.fi/tietosuoja)
+
+## EVA Studio
+- EVA Studio on Eva Median digital signage -palvelu: yrityksen näytöt, ruokalistat, mainokset ja ajastukset yhdestä paikasta.
+- EVA Studio is Eva Media's digital signage platform for business screens, menus, AI ads and scheduling: https://app.evamedia.fi
 
 ## Some
 - [Instagram @evamediaoy](https://www.instagram.com/evamediaoy)
