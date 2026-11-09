@@ -27,7 +27,7 @@ gsap.timeline({defaults:{ease:'power3.out'}})
   .from('.hero h1 span',{y:18,autoAlpha:0,duration:.6},'-=.35')
   .from('.hero-sub',{y:16,autoAlpha:0,duration:.55},'-=.4')
   .from('.hero-actions > *',{y:12,autoAlpha:0,duration:.45,stagger:.08},'-=.35')
-  .from('.hero-cards > *',{y:40,autoAlpha:0,rotate:function(i){return i%2?2:-2},duration:.8,stagger:.14},'-=.6');
+  .fromTo('.hero-cards > *',{y:40,autoAlpha:0,rotation:function(i){return i%2?2:-2}},{y:0,autoAlpha:1,rotation:0,duration:.8,stagger:.14,clearProps:'transform'},'-=.6');
 
 /* Hero kartları kaydırırken hafif paralaks (sadece geniş ekranda). */
 ST.matchMedia({'(min-width: 961px)':function(){
