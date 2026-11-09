@@ -22,3 +22,6 @@ Eva Media Oy is a signage and vehicle-wrap company in Mäntsälä, Finland (Uusi
 ## Some
 - [Instagram @evamediaoy](https://www.instagram.com/evamediaoy)
 - [YouTube @evamediaoy](https://youtube.com/@evamediaoy)
+
+## Leimo
+Eva Media Oy:n digitaalinen leimakortti (kanta-asiakaskortti) paikallisille yrityksille: ei sovelluslatausta, NFC ja QR-koodi kassalla, henkilöstön roolit ja palkintojen seuranta. https://leimo.fi · Yrityksille: https://leimo.fi/for-business

@@ -47,6 +47,10 @@ reveal('.studio .board','.studio',{y:50,scale:.96,duration:.9});
 reveal('.studio .board-row','.studio .board-list',{x:-24,y:0,stagger:.1,duration:.5});
 reveal('.studio-feats > *','.studio-feats',{y:18,stagger:.06,duration:.5});
 reveal('.svc-grid .svc','.svc-grid',{y:36,stagger:.07});
+/* Leimo: puhelin nousee, leimat painetaan yksi kerrallaan. */
+reveal('.leimo-phone','.leimo',{y:60,rotate:-3,duration:.9});
+reveal('.leimo-feats li','.leimo-feats',{y:16,stagger:.07,duration:.5});
+reveal('.lp-stamps i.on','.leimo-phone',{scale:0,y:0,stagger:.09,duration:.35,ease:'back.out(2.2)',delay:.4});
 reveal('#strip > *','#strip',{x:60,y:0,stagger:.08,duration:.6});
 reveal('.contact-grid > *','.contact-grid',{y:24,stagger:.1});
 reveal('#ukk details','#ukk',{y:14,stagger:.05,duration:.45});
