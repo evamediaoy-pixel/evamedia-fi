@@ -344,3 +344,18 @@ html.lenis,html.lenis body{height:auto}
 .lp-log{list-style:none;margin:0;padding:0;display:grid;gap:0;font-size:13px}
 .lp-log li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #ece3d8}
 .lp-log small{color:#7a746c}
+
+/* Hero: Leimo-kortti, vaakasuora nauha kahden kortin alla */
+.hero-cards{grid-template-rows:auto auto;height:auto}
+.hero-cards>.hcard-media,.hero-cards>.hcard-studio{min-height:min(50svh,450px)}
+@media(max-width:960px){.hero-cards>.hcard-media,.hero-cards>.hcard-studio{min-height:0}}
+.hcard-leimo{grid-column:1/-1;background:#ff5a1f;color:#fff;flex-direction:row;align-items:center;justify-content:space-between;min-height:128px}
+.hcard-leimo .hcard-go{background:#fff;color:#ff5a1f}
+.hcard-leimo .hcard-body{flex:1}
+.mini-stamp{width:min(46%,260px);margin:14px 0 14px 14px;border-radius:14px;background:#fbf7f2;color:#1b1a18;padding:12px;box-shadow:0 14px 32px rgba(0,0,0,.18);display:grid;gap:9px;flex:0 0 auto}
+.ms-top{display:flex;align-items:center;gap:8px;font-size:13px}.ms-top img{width:22px;height:22px;border-radius:6px}
+.ms-dots{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}
+.ms-dots i{aspect-ratio:1;border-radius:50%;border:2px dashed #e3d9cd}
+.ms-dots i.on{border:0;background:radial-gradient(circle,#fff 0 22%,#ff5a1f 23% 52%,#fff 53% 64%,#ff5a1f 65%)}
+.ms-bar{height:6px;border-radius:6px;background:#efe6dc;overflow:hidden}.ms-bar span{display:block;width:70%;height:100%;background:#ff5a1f}
+@media(max-width:960px){.hcard-leimo{aspect-ratio:auto!important;min-height:0}.ms-dots{grid-template-columns:repeat(5,1fr)}}
